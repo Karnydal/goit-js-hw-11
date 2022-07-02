@@ -84,6 +84,7 @@ function onSearchPicture(event) {
     }
     const totalCards = response.data.totalHits;
     Notiflix.Notify.success(`Hooray! We found ${totalCards} images.`);
+    event.target.reset();
     const markup_cards = createCards(picturesArray);
     galleryEl.insertAdjacentHTML('beforeend', markup_cards);
     const cardsEl = document.querySelectorAll('.photo-card');
